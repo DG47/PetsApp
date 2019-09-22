@@ -1,0 +1,4 @@
+#Mon Dec 10 10:15:03 IST 2018
+base.0=/home/jaypatel/AndroidStudioProjects/android-design-library-master/PetsNew/app/build/intermediates/dex/release/mergeDexRelease/out
+path.0=classes.dex
+renamed.0=classes.dex

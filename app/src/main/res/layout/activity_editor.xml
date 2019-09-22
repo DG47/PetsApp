@@ -1,0 +1,183 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/editor_layout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="@dimen/activity_margin"
+              android:transitionName="@string/transition_string"
+              tools:context=".EditorActivity"
+              tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute"
+              android:background="@color/selectedBackground">
+
+    <!-- Name category -->
+    <LinearLayout
+            android:id="@+id/name_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?selectableItemBackground"
+            android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/name"/>
+
+
+        <!-- Name field -->
+        <EditText
+                android:id="@+id/edit_pet_name"
+                style="@style/EditorFieldStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:inputType="textCapWords"
+                android:selectAllOnFocus="true" tools:ignore="Autofill"/>
+        <!--android:hint="@string/hint_pet_name"-->
+
+    </LinearLayout>
+
+
+    <!-- Breed category -->
+    <RadioGroup
+            android:id="@+id/pet_type_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            android:theme="@style/AppThemeCompat"
+            android:weightSum="5">
+
+        <RadioButton
+                android:id="@+id/pet_type_dog"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@drawable/dog"/>
+
+        <RadioButton
+                android:id="@+id/pet_type_cat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@drawable/cat"/>
+
+        <RadioButton
+                android:id="@+id/pet_type_fish"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@drawable/fish"/>
+
+        <RadioButton
+                android:id="@+id/pet_type_bird"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@drawable/bird"/>
+
+        <RadioButton
+                android:id="@+id/pet_type_other"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@drawable/other"
+                android:checked="true"/>
+
+    </RadioGroup>
+
+    <LinearLayout
+            android:id="@+id/breed_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+        <!-- Label -->
+        <TextView
+                style="@style/CategoryStyle"
+                android:layout_weight="1"
+                android:text="@string/breed"/>
+
+
+        <!-- Name field -->
+        <EditText
+                android:id="@+id/edit_pet_breed"
+                style="@style/EditorFieldStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:inputType="textCapWords"
+                android:selectAllOnFocus="true" tools:ignore="Autofill"/>
+        <!--android:hint="@string/hint_pet_breed"-->
+
+    </LinearLayout>
+
+    <!-- Gender category -->
+    <LinearLayout
+            android:id="@+id/container_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?selectableItemBackground"
+            android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/category_gender"/>
+
+        <!-- Input field -->
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+            <!-- Gender drop-down spinner -->
+            <Spinner
+                    android:id="@+id/spinner_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:paddingRight="16dp"
+                    android:spinnerMode="dropdown"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Measurement category -->
+    <LinearLayout
+            android:id="@+id/container_measurement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?selectableItemBackground"
+            android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+                style="@style/CategoryStyle"
+                android:text="@string/category_measurement"/>
+
+        <!-- Input fields -->
+        <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:elevation="@dimen/card_view_default_elevation"
+                android:paddingLeft="4dp">
+
+            <!-- Weight field -->
+            <EditText
+                    android:id="@+id/edit_pet_weight"
+                    style="@style/EditorFieldStyle"
+                    android:hint="@string/hint_pet_weight"
+                    android:inputType="number"
+                    android:maxLength="5" tools:ignore="Autofill"/>
+
+            <!-- Units for weight (kg) -->
+            <TextView
+                    android:id="@+id/label_weight_units"
+                    style="@style/EditorUnitsStyle"
+                    android:text="@string/unit_pet_weight"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
